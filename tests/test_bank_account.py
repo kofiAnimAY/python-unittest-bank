@@ -29,7 +29,7 @@ def test_failed_withdraw_neg(start_account):
 def test_transfer(start_account,test_account):
     start_account.transfer_to(test_account,50)
     assert test_account.balance==150 and start_account.balance==50
-def test_failed_transfer(start_account,x):
+def test_failed_transfer(start_account):
     with pytest.raises(ValueError):
         start_account.transfer_to(x,50)
 
